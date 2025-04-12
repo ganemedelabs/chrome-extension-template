@@ -1,0 +1,41 @@
+{
+    "name": "chrome-extension-template",
+    "version": "1.0.0",
+    "scripts": {
+        "build": "node build.js",
+        "publish": "node publish.js",
+        "start": "webpack serve --open",
+        "test": "jest",
+        "lint": "eslint .",
+        "lint:fix": "eslint --fix .",
+        "format": "prettier --write \"./**/*.{js,ts,json,html,css}\""
+    },
+    "devDependencies": {
+        "@eslint/compat": "^1.2.3",
+        "@eslint/eslintrc": "^3.2.0",
+        "@eslint/js": "^9.16.0",
+        "@types/chrome": "^0.0.287",
+        "@types/glob": "^8.1.0",
+        "@types/jest": "^29.5.14",
+        "@types/node": "^22.10.1",
+        "@typescript-eslint/eslint-plugin": "^8.16.0",
+        "@typescript-eslint/parser": "^8.16.0",
+        "archiver": "^7.0.1",
+        "copy-webpack-plugin": "^12.0.2",
+        "dotenv": "^16.4.7",
+        "eslint": "^9.16.0",
+        "eslint-config-prettier": "^9.1.0",
+        "eslint-plugin-import": "^2.31.0",
+        "eslint-plugin-prettier": "^5.2.1",
+        "google-auth-library": "^9.15.1",
+        "jest": "^29.7.0",
+        "jiti": "^2.4.2",
+        "prettier": "^3.4.1",
+        "ts-jest": "^29.2.5",
+        "ts-loader": "^9.5.1",
+        "typescript": "^5.7.2",
+        "webpack": "^5.96.1",
+        "webpack-cli": "^5.1.4",
+        "webpack-dev-server": "^5.1.0"
+    }
+}

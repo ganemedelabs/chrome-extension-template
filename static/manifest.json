@@ -1,0 +1,38 @@
+{
+    "manifest_version": 3,
+    "name": "chrome-extension-template",
+    "author": "ganemedelabs",
+    "version": "1.0.0",
+    "description": "A template for Chrome extensions using TypeScript, Webpack, and Jest.",
+    "permissions": ["activeTab", "contextMenus"],
+    "host_permissions": ["<all_urls>"],
+    "background": {
+        "service_worker": "serviceWorker.bundle.js"
+    },
+    "web_accessible_resources": [
+        {
+            "resources": ["popup.bundle.js", "images/*"],
+            "matches": ["<all_urls>"]
+        }
+    ],
+    "action": {
+        "default_title": "Chrome Extension Template",
+        "default_popup": "popup.html",
+        "default_icon": {
+            "16": "images/icon-16.png",
+            "48": "images/icon-48.png",
+            "128": "images/icon-128.png"
+        }
+    },
+    "content_scripts": [
+        {
+            "js": ["content.bundle.js"],
+            "matches": ["<all_urls>"]
+        }
+    ],
+    "icons": {
+        "16": "images/icon-16.png",
+        "48": "images/icon-48.png",
+        "128": "images/icon-128.png"
+    }
+}

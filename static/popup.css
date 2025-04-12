@@ -1,0 +1,207 @@
+:root {
+    --primary-color: #6583fc;
+    --secondary-color: #122263;
+    --background-color: #000;
+    --text-color: #fff;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    -webkit-tap-highlight-color: transparent;
+}
+
+::selection {
+    background: var(--primary-color);
+    color: #000;
+}
+
+body {
+    font-family:
+        system-ui,
+        -apple-system,
+        BlinkMacSystemFont,
+        "Segoe UI",
+        Roboto,
+        Oxygen,
+        Ubuntu,
+        Cantarell,
+        "Open Sans",
+        "Helvetica Neue",
+        sans-serif;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    height: 500px;
+    width: 500px;
+    margin: 0;
+    padding: 0;
+}
+
+main {
+    position: relative;
+    display: flex;
+    height: 100vh;
+    width: 100vw;
+    align-items: center;
+    justify-content: center;
+}
+
+a {
+    text-decoration: none;
+    color: var(--primary-color);
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+.background {
+    position: absolute;
+    width: 20rem;
+    height: 20rem;
+    background-color: var(--secondary-color);
+    filter: blur(10rem);
+    transition: background-color 2s ease;
+}
+
+main:has(.logo-circle:hover) .background {
+    background-color: red;
+}
+
+.container {
+    z-index: 10;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1rem;
+    gap: 1rem;
+}
+
+.logo-wrapper:has(.logo-circle:hover) {
+    animation: shake 0.3s infinite;
+}
+
+@keyframes shake {
+    0% {
+        transform: translate(0, 0);
+    }
+    25% {
+        transform: translate(5px, 5px);
+    }
+    50% {
+        transform: translate(-5px, -5px);
+    }
+    75% {
+        transform: translate(5px, -5px);
+    }
+    100% {
+        transform: translate(-5px, 5px);
+    }
+}
+
+.logo-circle {
+    position: relative;
+    width: 16rem;
+    height: 16rem;
+    transition: transform 2s ease;
+}
+
+.logo-circle:hover {
+    transform: scale(1.2);
+}
+
+.logo-background {
+    pointer-events: none;
+    position: relative;
+    width: 100%;
+    height: 100%;
+    margin: auto;
+    border-radius: 9999px;
+    transition-property: transform;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    transition-duration: 1000ms;
+    box-shadow:
+        inset 0 0 0 0.8em white,
+        0 0 10px 1px black;
+    background:
+        linear-gradient(60deg, black 63.78%, transparent 63.78%),
+        linear-gradient(-60deg, black 63.78%, transparent 63.78%) 100% 0,
+        linear-gradient(60deg, transparent 36.22%, white 36.22%) 100% 100%,
+        linear-gradient(-60deg, transparent 36.22%, white 36.22%) 0% 100%,
+        white linear-gradient(black, black) 50% 100%;
+    background-repeat: no-repeat;
+    background-size: 50% 50%;
+    transform: rotate(0deg);
+}
+
+.logo-circle:hover .logo-background {
+    transform: rotate(360deg);
+}
+
+.logo-background div {
+    position: absolute;
+    background: black;
+    border-radius: 9999px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 50%;
+    height: 50%;
+}
+
+.logo-triangle {
+    position: absolute;
+    pointer-events: none;
+    top: 0;
+    left: 0;
+    z-index: 10;
+    width: 100%;
+    height: 100%;
+    border-radius: 9999px;
+    background: linear-gradient(-60deg, black 63.78%, transparent 63.78%) 100% 0;
+    background-repeat: no-repeat;
+    background-size: 50% 50%;
+}
+
+.logo-triangle div {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 9999px;
+    background: linear-gradient(-60deg, black 63.78%, transparent 63.78%) 100% 20%;
+    background-repeat: no-repeat;
+    background-size: 50% 50%;
+}
+
+.logo-strip {
+    position: absolute;
+    pointer-events: none;
+    display: flex;
+    width: 50%;
+    height: 1.8rem;
+    top: 50%;
+    left: 50%;
+    transform: translateY(-50%);
+    z-index: 10;
+}
+
+.logo-strip > div {
+    height: 100%;
+    background-color: var(--primary-color);
+}
+
+.logo-strip > div:nth-child(1) {
+    width: 100%;
+    clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%, 0% 100%, 30% 0%);
+}
+
+.logo-strip > div:nth-child(2) {
+    position: absolute;
+    width: 50%;
+    transform: translateX(50%);
+}
+
+.logo-strip > div:nth-child(3) {
+    width: 100%;
+    clip-path: ellipse(50% 200% at 50% 50%);
+}
