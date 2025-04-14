@@ -66,7 +66,7 @@ The `build.js` script handles the production bundling and packaging of your Chro
 - Validates `manifest.json` for required fields (e.g., `manifest_version`, `name`, `version`).
 - Synchronizes versions between `package.json` and `manifest.json`.
 - Runs Webpack to bundle your code into the `dist/` directory.
-- Creates a versioned ZIP file (e.g., `extension-name-1.0.0.zip`) for deployment if no warnings occur.
+- Creates a versioned ZIP file (e.g., `extension-name-1-0-0.zip`) for deployment if no warnings occur.
 
 #### Usage
 
